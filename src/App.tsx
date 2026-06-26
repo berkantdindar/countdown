@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import couple from "./assets/bride.png";
-import dugunMuzigi from "./assets/sessiz_yemin.mp3";
+import dugunMuzigi from "./assets/Sessiz_Yemin.mp3";
 
 // Hedef Tarih
 const TARGET = new Date("2026-07-24T17:00:00");
