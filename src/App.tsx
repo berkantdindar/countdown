@@ -293,7 +293,6 @@ function HeartsCanvas(): React.JSX.Element {
 
 function useAutoMusic(): void {
   useEffect(() => {
-    // Şarkı dosyasının yolunu buraya ekleyebilirsin (veya yukarıdaki gibi import edebilirsin)
     const audio = new Audio(dugunMuzigi); 
     audio.loop = true;
     audio.volume = 0.4; // Arka planda rahatsız etmeyecek bir ses seviyesi
