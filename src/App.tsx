@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import couple from "./assets/bride.png";
+import dugunMuzigi from "./assets/sessiz_yemin.mp3";
+
 // Hedef Tarih
 const TARGET = new Date("2026-07-24T17:00:00");
 
@@ -291,105 +293,26 @@ function HeartsCanvas(): React.JSX.Element {
 
 function useAutoMusic(): void {
   useEffect(() => {
+    // Şarkı dosyasının yolunu buraya ekleyebilirsin (veya yukarıdaki gibi import edebilirsin)
+    const audio = new Audio(dugunMuzigi); 
+    audio.loop = true;
+    audio.volume = 0.4; // Arka planda rahatsız etmeyecek bir ses seviyesi
+
     let started = false;
-    function start() {
+
+    const startMusic = () => {
       if (started) return;
       started = true;
-      try {
-        const AudioContextClass =
-          window.AudioContext || (window as any).webkitAudioContext;
-        const ac = new AudioContextClass();
-        const N: Record<string, number> = {
-          C4: 261.6,
-          D4: 293.7,
-          E4: 329.6,
-          F4: 349.2,
-          G4: 392,
-          A4: 440,
-          B4: 493.9,
-          C5: 523.3,
-          D5: 587.3,
-          E5: 659.3,
-          G5: 784,
-        };
-        const mel = [
-          "E4",
-          "G4",
-          "A4",
-          "C5",
-          "B4",
-          "A4",
-          "G4",
-          "E4",
-          "D4",
-          "F4",
-          "G4",
-          "A4",
-          "C5",
-          "E5",
-          "D5",
-          "C5",
-          "B4",
-          "G4",
-          "A4",
-          "C5",
-          "E5",
-          "G5",
-          "E5",
-          "C5",
-          "A4",
-          "G4",
-        ];
-        const bass = ["C4", "C4", "G4", "G4", "A4", "A4", "F4", "F4"];
-        let mi = 0,
-          bi = 0;
+      audio.play().catch((err) => console.log("Müzik başlatılamadı:", err));
+    };
 
-        function pN(
-          freq: number,
-          t: number,
-          dur: number,
-          vol: number,
-          type: OscillatorType = "sine",
-        ) {
-          const o = ac.createOscillator(),
-            g = ac.createGain();
-          o.type = type;
-          o.frequency.setValueAtTime(freq, t);
-          g.gain.setValueAtTime(0, t);
-          g.gain.linearRampToValueAtTime(vol, t + 0.05);
-          g.gain.exponentialRampToValueAtTime(0.001, t + dur * 0.88);
-          o.connect(g);
-          g.connect(ac.destination);
-          o.start(t);
-          o.stop(t + dur);
-        }
-        const i1 = setInterval(() => {
-          const f = N[mel[mi % mel.length]];
-          pN(f, ac.currentTime, 0.42, 0.13);
-          pN(f * 0.794, ac.currentTime, 0.42, 0.05);
-          mi++;
-        }, 460);
-        const i2 = setInterval(() => {
-          pN(
-            N[bass[bi % bass.length]] * 0.5,
-            ac.currentTime,
-            0.9,
-            0.07,
-            "triangle",
-          );
-          bi++;
-        }, 920);
-        return () => {
-          clearInterval(i1);
-          clearInterval(i2);
-        };
-      } catch (e) {}
-    }
-    try {
-      start();
-    } catch (e) {}
-    document.addEventListener("click", start, { once: true });
-    return () => document.removeEventListener("click", start);
+    // Kullanıcı sayfada herhangi bir yere tıkladığında müzik başlar
+    document.addEventListener("click", startMusic, { once: true });
+
+    return () => {
+      document.removeEventListener("click", startMusic);
+      audio.pause();
+    };
   }, []);
 }
 
@@ -528,7 +451,6 @@ export default function App(): React.JSX.Element {
             fontStyle: "italic",
             fontWeight: 700,
             fontSize: "clamp(38px, 8vw, 54px)",
-            lineHeight: 1,
             textAlign: "center",
             marginBottom: 4,
             color: "#7a1f42",
