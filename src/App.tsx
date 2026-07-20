@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import couple from "./assets/bride.png";
+import route from "./assets/medya.png";
 import dugunMuzigi from "./assets/Sessiz_Yemin.mp3";
 
 // Hedef Tarih
-const TARGET = new Date("2026-07-24T17:00:00");
+const TARGET = new Date("2026-07-24T19:30:00");
 
 interface TimeLeft {
   d: number;
@@ -928,11 +929,25 @@ export default function App(): React.JSX.Element {
               fontSize: 15,
               color: "#a04060",
               letterSpacing: ".04em",
-              fontWeight:"bold",
+              fontWeight: "bold",
               lineHeight: 1.7,
             }}
           >
-            ŞEKE KIR BAHÇESİ - KİRAZLI BAHÇE
+            ŞEKE KIR BAHÇESİ - KİRAZLI BAHÇE{" "}
+            <a href="https://maps.app.goo.gl/SJPt6Z9FQvAiaX2J9?g_st=ac">
+              {" "}
+              <img
+                style={{
+                  width: "20%",
+                  maxWidth: "100px",
+                  position: "relative",
+                  top: "6px",
+                  left: "10px",
+                }}
+                src={route}
+                alt="route"
+              />
+            </a>
           </p>
           <p
             style={{
@@ -947,6 +962,21 @@ export default function App(): React.JSX.Element {
             }}
           >
             Altınova Mah. Fuar Cad. Tüyap Karşısı No:16 16250 Osmangazi / Bursa
+          </p>
+           <p
+            style={{
+              ...z,
+              textAlign: "center",
+              fontFamily: "'Cormorant Garamond', serif",
+              fontStyle: "italic",
+              fontSize: 18,
+              color: "#a04060",
+              letterSpacing: ".04em",
+              lineHeight: 1.7,
+              fontWeight:"normal"
+            }}
+          >
+            Cuma - Saat: 19.30
           </p>
         </div>
       </div>
