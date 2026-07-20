@@ -435,7 +435,7 @@ export default function App(): React.JSX.Element {
               <div style={{ fontSize: 10, color: "#d4a3b8", marginBottom: 6, letterSpacing: "2px" }}>✦ ❖ ✦</div>
 
               <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 30, color: "#7a1f42", fontStyle: "italic", fontWeight: 700, marginBottom: 2 }}>
-                Hasan & Zeynep
+                Zeynep & Hasan
               </h1>
               
               {/* Kaligrafik Ayraç Deseni */}
@@ -669,7 +669,7 @@ export default function App(): React.JSX.Element {
               animation: "glowNames 3s ease-in-out infinite alternate",
             }}
           >
-            Hasan{" "}
+            Zeynep{" "}
             <span
               style={{
                 color: "#d4688a",
@@ -682,7 +682,7 @@ export default function App(): React.JSX.Element {
             >
               ♥
             </span>{" "}
-            Zeynep
+            Hasan
           </h1>
 
           {/* Tarih */}
@@ -729,7 +729,7 @@ export default function App(): React.JSX.Element {
                   textAlign: "center",
                 }}
               >
-                🎊 Mutluluklar Hasan &amp; Zeynep! 🎊
+                🎊 Mutluluklar Zeynep &amp; Hasan! 🎊
               </div>
             ) : (
               <>
@@ -758,7 +758,7 @@ export default function App(): React.JSX.Element {
               lineHeight: 1.7,
             }}
           >
-            "İki can, tek yürek — sonsuza dek."
+            "sonsuza dek."
           </p>
         </div>
       </div>
