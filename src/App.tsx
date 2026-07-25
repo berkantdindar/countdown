@@ -4,7 +4,7 @@ import route from "./assets/medya.png";
 import dugunMuzigi from "./assets/Sessiz_Yemin.mp3";
 
 // Hedef Tarih
-const TARGET = new Date("2026-07-24T19:30:00");
+const TARGET = new Date("2026-08-30T18:00:00");
 
 interface TimeLeft {
   d: number;
@@ -468,7 +468,7 @@ export default function App(): React.JSX.Element {
                   marginBottom: 2,
                 }}
               >
-                Zeynep & Hasan
+                Dilara & Berkay
               </h1>
 
               {/* Kaligrafik Ayraç Deseni */}
@@ -771,7 +771,7 @@ export default function App(): React.JSX.Element {
               animation: "glowNames 3s ease-in-out infinite alternate",
             }}
           >
-            Zeynep{" "}
+            Dilara{" "}
             <span
               style={{
                 color: "#d4688a",
@@ -784,7 +784,7 @@ export default function App(): React.JSX.Element {
             >
               ♥
             </span>{" "}
-            Hasan
+            Berkay
           </h1>
 
           {/* Tarih */}
@@ -800,7 +800,7 @@ export default function App(): React.JSX.Element {
               textAlign: "center",
             }}
           >
-            24 · 07 · 2026 &nbsp;·&nbsp; Evleniyoruz!
+            30 · 08 · 2026 &nbsp;·&nbsp; Evleniyoruz!
           </div>
 
           {/* Kalpli Ayraç */}
@@ -861,7 +861,7 @@ export default function App(): React.JSX.Element {
                   textAlign: "center",
                 }}
               >
-                🎊 Mutluluklar Zeynep &amp; Hasan! 🎊
+                🎊 Mutluluklar Dilara &amp; Berkay! 🎊
               </div>
             ) : (
               <>
@@ -933,8 +933,8 @@ export default function App(): React.JSX.Element {
               lineHeight: 1.7,
             }}
           >
-            ŞEKE KIR BAHÇESİ - KİRAZLI BAHÇE{" "}
-            <a href="https://maps.app.goo.gl/SJPt6Z9FQvAiaX2J9?g_st=ac">
+            Kelebek Çiftliği - Beykoz/İstanbul{" "}
+            <a href="https://maps.app.goo.gl/oCgwiLasEna8XwKo8P">
               {" "}
               <img
                 style={{
@@ -949,7 +949,7 @@ export default function App(): React.JSX.Element {
               />
             </a>
           </p>
-          <p
+          {/* <p
             style={{
               ...z,
               textAlign: "center",
@@ -977,7 +977,7 @@ export default function App(): React.JSX.Element {
             }}
           >
             Cuma - Saat: 19.30
-          </p>
+          </p> */}
         </div>
       </div>
     </>
