@@ -934,7 +934,7 @@ export default function App(): React.JSX.Element {
             }}
           >
             Kelebek Çiftliği - Beykoz/İstanbul{" "}
-            <a href="https://maps.app.goo.gl/oCgwiLasEna8XwKo8P">
+            <a href="https://maps.app.goo.gl/F1FsuG5XShUuBRoz5?g_st=acP">
               {" "}
               <img
                 style={{
